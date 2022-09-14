@@ -1,0 +1,92 @@
+<div
+  class="bg-image"
+  style="background-image: url('../../assets/shree.jpg'); height: 100vh"
+></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="text-center">
+          <h1>Signup</h1>
+          <h6>Register Here!!</h6>
+        </div>
+        <div class="form">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="id">Id</label>
+              <input
+                formControlName="id"
+                type="number"
+                class="form-control"
+                placeholder="Enter your Id"
+              />
+                  
+            </div>
+            <div class="form-group">
+              <label>First Name</label>
+              <input
+                formControlName="firstName"
+                type="text"
+                class="form-control"
+                placeholder="Enter first name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Last Name</label>
+              <input
+                formControlName="lastName"
+                type="text"
+                class="form-control"
+                placeholder="Enter last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input
+                formControlName="email"
+                type="text"
+                class="form-control"
+                placeholder="Enter email address"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Password</label>
+              <input
+                formControlName="password"
+                type="text"
+                class="form-control"
+                placeholder="Enter password"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Confirm-Password</label>
+              <input
+                formControlName="reenterpassword"
+                type="password"
+                class="form-control"
+                placeholder="Re-enter password"
+              />
+            </div>
+
+            <div>
+              <button
+                style="margin-top: 10px"
+                [disabled]="signupForm.invalid"
+                type="submit"
+                class="btn btn-primary"
+                (click)="onSubmit()"
+              >
+                Signup
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
