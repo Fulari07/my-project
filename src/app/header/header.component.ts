@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   selectedclass: any = 'a';
-  @Input() UserName: any = '';
+  @Input() userName: any = '';
 
   constructor() {}
 

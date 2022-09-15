@@ -12,11 +12,11 @@
           <h6>Login Here!!</h6>
         </div>
         <div>
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label>Username</label>
               <input
-                formControlName="userName"
+                formControlName="username"
                 type="text"
                 class="form-control"
                 placeholder="Enter Username"
@@ -39,7 +39,7 @@
                 style="margin-top: 10px"
                 type="submit"
                 class="btn btn-primary"
-                (click)="onSubmit('form')"
+                (click)="onSubmit()"
               >
                 Submit
               </button>

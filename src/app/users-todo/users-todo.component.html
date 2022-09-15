@@ -1,12 +1,12 @@
 <div class="sticky-top">
-  <app-header [UserName]="userDetails.name"></app-header>
+  <app-header [userName]="userDetails.name"></app-header>
   <div class="row">
     <div
       class="text-center col-3 p-2"
       type="button"
       data-toggle="modal"
       data-target="#exampleModal"
-      style="padding: 10px; font-size: large"
+      style="padding: 10px; font-size: large; margin: right 10px"
     >
       <app-reuse-button
         [text]="'Add New Todos'"
@@ -17,7 +17,7 @@
     <div class="text-center col-9">
       <div
         style="padding: 10px; font-size: large"
-        class="form-check m-2 border border-2 rounded bg-secondary"
+        class="form-check m-2 border border-2 rounded bg-info"
       >
         <input
           style="margin: 5px"
@@ -32,35 +32,35 @@
           class="form-check-label"
           for="flexCheckDefault"
           style="color: white"
-          background-color="green"
         >
-          See The Completed Todos List Here
+          <strong> See The Completed Todos List Here</strong>
         </label>
       </div>
     </div>
   </div>
 </div>
+
 <div class="row m-2">
   <div class="text-center col-sm-12 col-lg-3 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-dark p-2" style="color: bisque">
+    <div class="m-2 bg-info p-2" style="color: white">
       <strong>User ID</strong>
     </div>
   </div>
   <div class="text-center col-sm-12 col-lg-3 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-dark p-2" style="color: bisque"><strong>ID</strong></div>
+    <div class="m-2 bg-info p-2" style="color: white"><strong>ID</strong></div>
   </div>
   <div class="text-center col-sm-12 col-lg-3 col-md-3 col-md-3 col-xl-3">
-    <div class="m-2 bg-dark p-2" style="color: bisque">
+    <div class="m-2 bg-info p-2" style="color: white">
       <strong>Title</strong>
     </div>
   </div>
   <div class="text-center col-sm-12 col-lg-2 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-dark p-2" style="color: bisque">
+    <div class="m-2 bg-info p-2" style="color: white">
       <strong>Completed</strong>
     </div>
   </div>
   <div class="text-center col-sm-12 col-lg-3 col-md-3 col-md-3 col-xl-3">
-    <div class="m-2 bg-dark p-2" style="color: bisque">
+    <div class="m-2 bg-info p-2" style="color: white">
       <strong>Action</strong>
     </div>
   </div>
@@ -106,7 +106,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Add Todo's List</h4>
+        <h4 class="modal-title">Add Todos</h4>
         <button
           type="button"
           class="close"

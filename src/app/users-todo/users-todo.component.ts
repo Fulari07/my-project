@@ -14,13 +14,13 @@ export class UsersTodoComponent implements OnInit {
   display = 'none';
   addTodoListForm: FormGroup;
   todosList: any[] = [];
-  headArray = [
-    { Head: 'User Id', FieldName: 'userId' },
-    { Head: 'Title', FieldName: 'title' },
-    { Head: 'Id', FieldName: 'id' },
-    { Head: 'Completed', FieldName: 'completed' },
-    { Head: 'Action', FieldName: '' },
-  ];
+  // headArray = [
+  //   { Head: 'User Id', FieldName: 'userId' },
+  //   { Head: 'Title', FieldName: 'title' },
+  //   { Head: 'Id', FieldName: 'id' },
+  //   { Head: 'Completed', FieldName: 'completed' },
+  //   { Head: 'Action', FieldName: '' },
+  // ];
   constructor(
     private http: HttpClient,
     public todo: TodoService,
@@ -89,10 +89,12 @@ export class UsersTodoComponent implements OnInit {
   //   // this.isCreateMode = false;
   // }
 
-  editUser(item: any) {
-    debugger;
-  }
-  deleteUser(item: any) {
-    debugger;
-  }
+  // edit(item: any) {
+  //   debugger;
+  //   this.onEdit.emit(item);
+  // }
+  // delete(item: any) {
+  //   debugger;
+  //   this.onDelete.emit(item);
+  // }
 }
