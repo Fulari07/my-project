@@ -1456,4 +1456,11 @@ export class TodoService {
   ];
 
   constructor() {}
+
+  deleteUser(id: Number) {
+    const i = this.todosList.findIndex((e) => e.id === id);
+    if (i !== -1) {
+      this.todosList.splice(i, 1);
+    }
+  }
 }

@@ -1,17 +1,17 @@
 <div class="sticky-top">
-  <app-header [userName]="userDetails.name"></app-header>
+  <app-header [userName]="userInfo.name"></app-header>
   <div class="row">
     <div
       class="text-center col-3 p-2"
       type="button"
       data-toggle="modal"
-      data-target="#exampleModal"
+      data-target="#Demo1"
       style="padding: 10px; font-size: large; margin: right 10px"
     >
       <app-reuse-button
         [text]="'Add New Todos'"
         btnClass="btn-primary"
-        (click)="openModal()"
+        (click)="newModalView()"
       ></app-reuse-button>
     </div>
     <div class="text-center col-9">
@@ -23,16 +23,12 @@
           style="margin: 5px"
           class="form-check-input ml-2"
           type="checkbox"
-          [(ngModel)]="showCompleted"
-          (ngModelChange)="showList()"
+          [(ngModel)]="completedTodos"
+          (ngModelChange)="myTodoList()"
           [value]="true"
-          id="flexCheckDefault"
+          id="myCheckbox"
         />
-        <label
-          class="form-check-label"
-          for="flexCheckDefault"
-          style="color: white"
-        >
+        <label class="form-check-label" for="myCheckbox" style="color: white">
           <strong> See The Completed Todos List Here</strong>
         </label>
       </div>
@@ -86,13 +82,14 @@
         style="margin-right: 10px"
         [text]="'Edit'"
         btnClass="btn-success"
-        (click)="openModal()"
+        (click)="editUser()"
       ></app-reuse-button>
       <app-reuse-button
         [text]="'Delete'"
         btnClass="btn-danger"
-        (click)="openModal()"
+        (click)="deleteUser()"
       ></app-reuse-button>
+      <!-- <button Class="btn btn-danger" (click)="deleteUser()">Delete</button> -->
     </div>
   </div>
 </div>
@@ -111,13 +108,13 @@
           type="button"
           class="close"
           aria-label="Close"
-          (click)="onCloseHandled()"
+          (click)="onClose()"
         >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="addTodoListForm" (ngSubmit)="submitForm()">
+        <form [formGroup]="addTodoList" (ngSubmit)="submitList()">
           <div class="form-group m-2">
             <input
               type="number"
@@ -135,7 +132,7 @@
             />
           </div>
           <button
-            [disabled]="!addTodoListForm.valid"
+            [disabled]="!addTodoList.valid"
             type="submit"
             class="btn btn-primary"
           >
@@ -144,11 +141,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-default"
-          (click)="onCloseHandled()"
-        >
+        <button type="button" class="btn btn-default" (click)="onClose()">
           Close
         </button>
       </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TodoService } from '../todo.service';
+// import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-users-todo',
@@ -9,11 +9,13 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./users-todo.component.css'],
 })
 export class UsersTodoComponent implements OnInit {
-  userDetails: any = {};
-  showCompleted: boolean = false;
+  userId: any = '';
+  userInfo: any = {};
+  completedTodos: boolean = false;
   display = 'none';
-  addTodoListForm: FormGroup;
+  addTodoList: FormGroup;
   todosList: any[] = [];
+
   // headArray = [
   //   { Head: 'User Id', FieldName: 'userId' },
   //   { Head: 'Title', FieldName: 'title' },
@@ -22,12 +24,12 @@ export class UsersTodoComponent implements OnInit {
   //   { Head: 'Action', FieldName: '' },
   // ];
   constructor(
-    private http: HttpClient,
+    // private http: HttpClient,
     public todo: TodoService,
-    private fb: FormBuilder
+    private FormBuilder: FormBuilder
   ) {
-    this.addTodoListForm = this.fb.group({
-      userId: [this.userDetails.id],
+    this.addTodoList = this.FormBuilder.group({
+      userId: [this.userInfo.id],
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
       completed: [false],
@@ -36,40 +38,50 @@ export class UsersTodoComponent implements OnInit {
 
   ngOnInit(): void {
     // this.loadUsers();
-    this.userDetails = JSON.parse(
-      localStorage.getItem('userdetails') || 'null'
+    this.userInfo = JSON.parse(
+      localStorage.getItem('userInformation') || 'null'
     );
-    this.addTodoListForm.patchValue({
-      userId: this.userDetails.id,
+    this.addTodoList.patchValue({
+      userId: this.userInfo.id,
     });
     this.todosList = this.todo.todosList.filter(
-      (x: any) => x.userId === this.userDetails.id
+      (x: any) => x.userId === this.userInfo.id
     );
   }
-  showList() {
-    if (this.showCompleted) {
+  myTodoList() {
+    if (this.completedTodos) {
       this.todosList = this.todo.todosList.filter(
-        (x: any) => x.userId === this.userDetails.id && x.completed === true
+        (x: any) => x.userId === this.userInfo.id && x.completed === true
       );
     } else {
       this.todosList = this.todo.todosList.filter(
-        (x: any) => x.userId === this.userDetails.id
+        (x: any) => x.userId === this.userInfo.id
       );
     }
   }
-  openModal() {
+
+  newModalView() {
     this.display = 'block';
   }
-  onCloseHandled() {
+  onClose() {
     this.display = 'none';
   }
-  submitForm() {
-    console.log(this.addTodoListForm.value);
-    this.todo.todosList.push(this.addTodoListForm.value);
-    this.onCloseHandled();
+  submitList() {
+    console.log(this.addTodoList.value);
+    this.todo.todosList.push(this.addTodoList.value);
+    this.onClose();
     this.ngOnInit();
 
     // Here need to impliment the HTTP call
+  }
+
+  // onEditUser(userId) {
+  //   console.log(userId);
+  // }
+
+  editUser() {}
+  deleteUser() {
+    this.todo.deleteUser(this.userInfo.id);
   }
 
   // loadUsers() {

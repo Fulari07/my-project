@@ -6,14 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  selectedclass: any = 'a';
+  myclass: any = 'a';
   @Input() userName: any = '';
 
   constructor() {}
 
   ngOnInit(): void {}
   addItem(event: any) {
-    this.selectedclass = event;
+    this.myclass = event;
     console.log(event);
   }
 }
