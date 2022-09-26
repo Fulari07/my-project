@@ -27,6 +27,9 @@
                 formControlName="password"
                 [label]="'Password'"
                 [type]="'password'"
+                [status]="
+                  loginForm.get('password').invalid ? 'error' : 'success'
+                "
               >
               </app-reactive-inputs>
             </div>

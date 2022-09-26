@@ -1,4 +1,4 @@
-<div class="sticky-top" style="background-color: lightpink">
+<div class="sticky-top" style="background-color: ghostwhite">
   <app-header [userName]="userDetails.name"></app-header>
   <div class="row">
     <div
@@ -17,7 +17,7 @@
     <div class="container" class="text-center col-9">
       <div
         style="padding: 10px; font-size: large"
-        class="form-check m-2 border border-2 rounded bg-info"
+        class="form-check m-2 border border-2 rounded bg-success"
       >
         <input
           style="margin: 5px"
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<div class="row m-2">
+<div class="row m-2" style="background-color: bisque">
   <div class="text-center col-sm-12 col-lg-3 col-md-2 col-md-2 col-xl-2">
     <div class="m-2 bg-info p-2" style="color: white">
       <strong>User ID</strong>
@@ -61,23 +61,27 @@
     </div>
   </div>
 </div>
-<div *ngFor="let item of todosList" class="row m-2">
+<div
+  *ngFor="let item of todosList"
+  class="row m-2"
+  style="background-color: ghostwhite"
+>
   <div class="text-center col-sm-12 col-lg-2 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-light p-2">{{ item.userId }}</div>
+    <div class="m-2 bg-ghostwhite p-2">{{ item.userId }}</div>
   </div>
   <div class="text-center col-sm-12 col-lg-2 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-light p-2">{{ item.id }}</div>
+    <div class="m-2 bg-ghostwhite p-2">{{ item.id }}</div>
   </div>
   <div class="text-center col-sm-12 col-lg-3 col-md-3 col-md-3 col-xl-3">
-    <div class="m-2 bg-light p-2">{{ item.title }}</div>
+    <div class="m-2 bg-ghostwhite p-2">{{ item.title }}</div>
   </div>
   <div class="text-center col-sm-12 col-lg-2 col-md-2 col-md-2 col-xl-2">
-    <div class="m-2 bg-light p-2">
+    <div class="m-2 bg-ghostwhite p-2">
       {{ item.completed ? "Completed" : "Not Completed" }}
     </div>
   </div>
   <div class="text-center col-sm-12 col-lg-3 col-md-3 col-md-3 col-xl-3">
-    <div class="m-2 bg-light p-2">
+    <div class="m-2 bg-ghostwhite p-2">
       <app-reuse-button
         style="margin-right: 10px"
         [text]="'Edit'"
