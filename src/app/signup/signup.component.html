@@ -14,63 +14,57 @@
         <div class="form">
           <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="id">Id</label>
-              <input
+              <app-reactive-inputs
                 formControlName="id"
-                type="number"
-                class="form-control"
-                placeholder="Enter your Id"
-              />
-                  
+                [label]="'Id'"
+                [type]="'number'"
+              >
+              </app-reactive-inputs>
             </div>
+
             <div class="form-group">
-              <label>First Name</label>
-              <input
+              <app-reactive-inputs
                 formControlName="firstName"
-                type="text"
-                class="form-control"
-                placeholder="Enter first name"
-              />
+                [label]="'First Name'"
+                [type]="'text'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div class="form-group">
-              <label>Last Name</label>
-              <input
+              <app-reactive-inputs
                 formControlName="lastName"
-                type="text"
-                class="form-control"
-                placeholder="Enter last name"
-              />
+                [label]="'Last Name'"
+                [type]="'text'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div class="form-group">
-              <label>Email</label>
-              <input
+              <app-reactive-inputs
                 formControlName="email"
-                type="text"
-                class="form-control"
-                placeholder="Enter email address"
-              />
+                [label]="'Email'"
+                [type]="'email'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div class="form-group">
-              <label>Password</label>
-              <input
+              <app-reactive-inputs
                 formControlName="password"
-                type="text"
-                class="form-control"
-                placeholder="Enter password"
-              />
+                [label]="'Password'"
+                [type]="'password'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div class="form-group">
-              <label>Confirm-Password</label>
-              <input
+              <app-reactive-inputs
                 formControlName="reenterpassword"
-                type="password"
-                class="form-control"
-                placeholder="Re-enter password"
-              />
+                [label]="'Confirm-Password'"
+                [type]="'password'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div>

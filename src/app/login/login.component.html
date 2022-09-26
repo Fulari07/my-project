@@ -14,23 +14,21 @@
         <div>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label>Username</label>
-              <input
+              <app-reactive-inputs
                 formControlName="username"
-                type="text"
-                class="form-control"
-                placeholder="Enter Username"
-              />
+                [label]="'Username'"
+                [type]="'text'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div class="form-group">
-              <label>Password</label>
-              <input
+              <app-reactive-inputs
                 formControlName="password"
-                type="text"
-                class="form-control"
-                placeholder="Enter password"
-              />
+                [label]="'Password'"
+                [type]="'password'"
+              >
+              </app-reactive-inputs>
             </div>
 
             <div>

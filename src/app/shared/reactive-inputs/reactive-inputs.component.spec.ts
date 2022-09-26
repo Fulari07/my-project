@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputComponent } from './input.component';
+import { ReactiveInputsComponent } from './reactive-inputs.component';
 
-describe('InputComponent', () => {
-  let component: InputComponent;
-  let fixture: ComponentFixture<InputComponent>;
+describe('ReactiveInputsComponent', () => {
+  let component: ReactiveInputsComponent;
+  let fixture: ComponentFixture<ReactiveInputsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputComponent ]
+      declarations: [ ReactiveInputsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InputComponent);
+    fixture = TestBed.createComponent(ReactiveInputsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

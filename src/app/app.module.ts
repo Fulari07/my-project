@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { InputComponent } from './input/input.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
@@ -14,18 +13,21 @@ import { ReuseButtonComponent } from './reuse-button/reuse-button.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ReactiveInputsComponent } from './shared/reactive-inputs/reactive-inputs.component';
+import { MyPasswordInputComponent } from './shared/my-password-input/my-password-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InputComponent,
     SignupComponent,
     MyDashboardComponent,
     UsersTodoComponent,
     ReuseButtonComponent,
     HeaderComponent,
     DropdownComponent,
+    ReactiveInputsComponent,
+    MyPasswordInputComponent,
   ],
   imports: [
     BrowserModule,

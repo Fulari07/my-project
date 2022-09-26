@@ -16,21 +16,12 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   loginForm: FormGroup;
-  // form: any;
-  // createForm: any;
+
   constructor(
     public router: Router,
     public todo: TodoService,
     private formBuilder: FormBuilder
   ) {
-    // this.loginForm = new FormGroup({
-    //   userName: new FormControl('', [Validators.required]),
-    //   password: new FormControl('', [
-    //     Validators.required,
-    //     Validators.minLength(6),
-    //   ]),
-    // });
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -39,11 +30,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     // this.createForm();
   }
-
-  // onSubmit() {
-  //   this.router.navigateByUrl('/users-todo');
-  //   console.log();
-  // }
 
   onSubmit() {
     if (this.loginForm.valid) {

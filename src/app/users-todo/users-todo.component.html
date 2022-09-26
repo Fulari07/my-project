@@ -1,5 +1,5 @@
-<div class="sticky-top">
-  <app-header [userName]="userInfo.name"></app-header>
+<div class="sticky-top" style="background-color: lightpink">
+  <app-header [userName]="userDetails.name"></app-header>
   <div class="row">
     <div
       class="text-center col-3 p-2"
@@ -14,7 +14,7 @@
         (click)="newModalView()"
       ></app-reuse-button>
     </div>
-    <div class="text-center col-9">
+    <div class="container" class="text-center col-9">
       <div
         style="padding: 10px; font-size: large"
         class="form-check m-2 border border-2 rounded bg-info"
@@ -136,7 +136,7 @@
             type="submit"
             class="btn btn-primary"
           >
-            Submit
+            Save
           </button>
         </form>
       </div>

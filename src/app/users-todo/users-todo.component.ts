@@ -10,7 +10,7 @@ import { TodoService } from '../todo.service';
 })
 export class UsersTodoComponent implements OnInit {
   userId: any = '';
-  userInfo: any = {};
+  userDetails: any = {};
   completedTodos: boolean = false;
   display = 'none';
   addTodoList: FormGroup;
@@ -29,7 +29,7 @@ export class UsersTodoComponent implements OnInit {
     private FormBuilder: FormBuilder
   ) {
     this.addTodoList = this.FormBuilder.group({
-      userId: [this.userInfo.id],
+      userId: [this.userDetails.id],
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
       completed: [false],
@@ -38,24 +38,24 @@ export class UsersTodoComponent implements OnInit {
 
   ngOnInit(): void {
     // this.loadUsers();
-    this.userInfo = JSON.parse(
-      localStorage.getItem('userInformation') || 'null'
+    this.userDetails = JSON.parse(
+      localStorage.getItem('userdetails') || 'null'
     );
     this.addTodoList.patchValue({
-      userId: this.userInfo.id,
+      userId: this.userDetails.id,
     });
     this.todosList = this.todo.todosList.filter(
-      (x: any) => x.userId === this.userInfo.id
+      (x: any) => x.userId === this.userDetails.id
     );
   }
   myTodoList() {
     if (this.completedTodos) {
       this.todosList = this.todo.todosList.filter(
-        (x: any) => x.userId === this.userInfo.id && x.completed === true
+        (x: any) => x.userId === this.userDetails.id && x.completed === true
       );
     } else {
       this.todosList = this.todo.todosList.filter(
-        (x: any) => x.userId === this.userInfo.id
+        (x: any) => x.userId === this.userDetails.id
       );
     }
   }
@@ -81,7 +81,7 @@ export class UsersTodoComponent implements OnInit {
 
   editUser() {}
   deleteUser() {
-    this.todo.deleteUser(this.userInfo.id);
+    this.todo.deleteUser(this.userDetails.id);
   }
 
   // loadUsers() {
